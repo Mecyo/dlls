@@ -3,13 +3,6 @@
 #include <string.h>
 #include "bankdll.h"
 
-int contarContas();
-void fecharArquivo();
-void abrirArquivo(char* nomeArquivo, char parametro);
-BANKDLL Conta criarConta(char* cliente, char* senha, float saldoInicial);
-BANKDLL bool depositar(int numConta,float valor);
-BANKDLL bool sacar(int numConta,float valor);
-BANKDLL float consultarSaldo(int numConta);
 
 static char NOME_ARQ_CONTAS[] = "contas.db";
 static char NOME_ARQ_NUM_CONTAS[] = "num_contas.db";
@@ -17,29 +10,6 @@ static char NOME_ARQ_NUM_CONTAS[] = "num_contas.db";
 
 FILE *pont_arq_contas;
 int qtdContas;
-
-int main ()
-{
-
-    char* cliente[20];
-    char* senha[8];
-    float saldoInicial;
-
-    int qtdContas = contarContas();
-    printf("QTDE contas: %i", qtdContas);
-
-    puts("Nome do cliente: ");
-    gets(*cliente);
-
-    puts("Senha: ");
-    gets(*senha);
-
-    puts("Saldo inicial: ");
-    scanf("%f", &saldoInicial);
-
-    //Conta nova = criarConta(cliente, senha, saldoInicial);
-    return 0;
-}
 
 int contarContas() {
 
@@ -78,8 +48,9 @@ BANKDLL Conta criarConta(char* cliente, char* senha, float saldoInicial)
     abrirArquivo(NOME_ARQ_NUM_CONTAS, "a");
 
     if(pont_arq_contas != NULL) {
-
-        fputs(nova.numConta, pont_arq_contas);
+    	char str[6];
+		sprintf(str, "%ld", nova.numConta);
+        fputs(str, pont_arq_contas);
     }
     else {
         printf("N�o foi poss�vel abrir o arquivo!");
@@ -90,8 +61,9 @@ fecharArquivo();
 abrirArquivo(NOME_ARQ_CONTAS, "a");
 
 if(pont_arq_contas != NULL) {
-
-        fprintf(pont_arq_contas, nova.numConta, ';', nova.ativa, ';', nova.saldo, ';', nova.cliente, ';', nova.senha, ";\n");
+		char str[6];
+		sprintf(str, "%ld", nova.numConta);
+        fprintf(pont_arq_contas, str, ';', nova.ativa, ';', nova.saldo, ';', nova.cliente, ';', nova.senha, ";\n");
     }
     else {
         printf("N�o foi poss�vel abrir o arquivo!");
@@ -105,10 +77,16 @@ fecharArquivo();
 Conta buscarConta(Conta numConta) {
 Conta busca;
 
+busca.numConta = 12345;
+busca.ativa =  true;
+strcpy(busca.cliente, "Emerson");
+busca.saldo = 234.56;
+strcpy(busca.senha, "1234567");
+
 return busca;
 }
 
-void abrirArquivo(char* nomeArquivo, char parametro) {
+void abrirArquivo(const char* nomeArquivo, char* parametro) {
 
 pont_arq_contas = fopen(nomeArquivo, parametro);
 
@@ -125,7 +103,7 @@ BANKDLL bool depositar(int numConta, float valor)
 {
     char linha[100];
     char ch;
-    char num[5];
+    char num[6];
     int i = 0;
     bool depositado;
 
@@ -134,21 +112,20 @@ BANKDLL bool depositar(int numConta, float valor)
     if(pont_arq_contas != NULL) {
 
         //nova.numConta, ";", nova.ativa, ";", nova.saldo, ";", nova.cliente, ";", nova.senha, ";\n"
-        //while() {
-            while (ch != ';')
+
+            while ((fgets(linha, 100, pont_arq_contas)) != NULL)
             {
-                ch=fgetc(pont_arq_contas);
-                num[i++] = ch;
+            	for (int var = 0; ch != ';'; ++var) {
+            		ch = linha[var];
+            		num[i] = ch;
+
+            	}
+				if((atoi(num)) == numConta){
+					//substituir linha atual alterando o saldo
+
+					}
 
             }
-            if(num == numConta){
-                //TODO
-                //while() {
-
-                }
-
-
-        //}
 
         depositado = true;
     }
@@ -164,7 +141,7 @@ BANKDLL bool depositar(int numConta, float valor)
 
 BANKDLL bool sacar(int numConta,float valor)
 {
-    char linha[100];
+    //char linha[100];
     char ch;
     char num[5];
     int i = 0;
@@ -190,12 +167,38 @@ BANKDLL bool sacar(int numConta,float valor)
 
     fecharArquivo();
 
+    i = atoi(num);
+
     return saque;
 }
 
 BANKDLL float consultarSaldo(int numConta)
 {
- float res;
+ float res = 2.9;
  return res;
+}
+
+int main ()
+{
+
+    char* cliente[20];
+    char* senha[8];
+    float saldoInicial;
+
+    int qtdContas = contarContas();
+    printf("QTDE contas: %i", qtdContas);
+
+    puts("Nome do cliente: ");
+    gets(*cliente);
+
+    puts("Senha: ");
+    gets(*senha);
+
+    puts("Saldo inicial: ");
+    scanf("%f", &saldoInicial);
+
+    Conta nova = criarConta(*cliente, *senha, saldoInicial);
+
+    return nova.numConta;
 }
 

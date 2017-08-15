@@ -15,11 +15,8 @@ struct
 	char senha[8];
 } typedef  Conta;
 
-int contarContas();
-void fecharArquivo();
-void abrirArquivo(const char* nomeArquivo, char* parametro);
 
-BANKDLL Conta criarConta(char* cliente, char* senha, float saldoInicial);
+BANKDLL Conta criarConta(char cliente[], char senha[], float saldoInicial);
 BANKDLL bool depositar(int numConta,float valor);
 BANKDLL bool sacar(int numConta,float valor);
 BANKDLL float consultarSaldo(int numConta);
