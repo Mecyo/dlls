@@ -22,3 +22,4 @@ BANKDLL bool sacar(int numConta,float valor);
 BANKDLL float consultarSaldo(int numConta);
 BANKDLL int contarContas();
 BANKDLL Conta buscarConta(int numConta);
+BANKDLL bool validarlogin(int numConta, char* senha);
