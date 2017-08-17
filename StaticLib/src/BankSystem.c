@@ -20,118 +20,127 @@
 #define enter 13
 
 /**
-* Function Prototypes
-*/
+ * Function Prototypes
+ */
 bool login();
 
-int main(int argc,char **argv)
-{
+int main(int argc, char **argv) {
 	//setlocale(LC_ALL,"Portuguese");
 
-    int ch,x,y,X,Y;
-	x=5; y=7; X=5; Y=5;
+	int ch, x, y, X, Y;
+	x = 5;
+	y = 7;
+	X = 5;
+	Y = 5;
 
-while(1){
+	while(!login()) {
 
-menu(X,Y);//variaveis em maiusculas
-gotoxy(x,y); //variaveis em minusculas
-printf(">\n");
+		while (1) {
 
-while(1){
-		ch=getch();
-		if(ch==224){
+			menu(X, Y); //variaveis em maiusculas
+			gotoxy(x, y); //variaveis em minusculas
+			printf(">\n");
 
-				     switch ( getch() ){
+			while (1) {
+				ch = getch();
+				if (ch == 224) {
 
-						case acima :
-					        	if(y<12){
-													gotoxy(x,y);
-													printf(" ");
-													gotoxy(x,++y);  printf(">");
-										} break;
+					switch (getch()) {
 
+					case acima:
+						if (y < 12) {
+							gotoxy(x, y);
+							printf(" ");
+							gotoxy(x, ++y);
+							printf(">");
+						}
+						break;
 
-						case abaixo :
-								if(y>7){
-													gotoxy(x,y);
-													printf(" ");
-													gotoxy(x,--y); printf(">");
-										}  break ;
+					case abaixo:
+						if (y > 7) {
+							gotoxy(x, y);
+							printf(" ");
+							gotoxy(x, --y);
+							printf(">");
+						}
+						break;
 
-
-					defalte : break;
+						defalte: break;
 
 					}
 
-		}else if(ch==enter){
-								if(escolha(y)==1){ goto fim;} break;
-							}
+				} else if (ch == enter) {
+					if (escolha(y) == 1) {
+						goto fim;
+					}
+					break;
+				}
 
+			}
+			system("cls");
 		}
-	system ("cls");
 	}
 
-	fim:
-		system("PAUSE");
+	fim: system("PAUSE");
 
 	return EXIT_SUCCESS;
 
 	/*char cliente[20];
-    char senha[8];
-    float saldoInicial;
-    bool validaLogin = login();
+	 char senha[8];
+	 float saldoInicial;
+	 bool validaLogin = login();
 
-    while(!validaLogin)
-    	validaLogin = login();
+	 while(!validaLogin)
+	 validaLogin = login();
 
-	menuPrincipal();
+	 menuPrincipal();
 
-	int qtdContas = contarContas();
-	printf("QTDE contas: %i\n\n\n\n", qtdContas);
+	 int qtdContas = contarContas();
+	 printf("QTDE contas: %i\n\n\n\n", qtdContas);
 
-	puts("Nome do cliente: ");
-	gets(cliente);
-	fflush(stdin);
+	 puts("Nome do cliente: ");
+	 gets(cliente);
+	 fflush(stdin);
 
-	puts("Senha: ");
-	gets(senha);
-	fflush(stdin);
+	 puts("Senha: ");
+	 gets(senha);
+	 fflush(stdin);
 
-	puts("Saldo inicial: ");
-	scanf("%f", &saldoInicial);
-	fflush(stdin);
+	 puts("Saldo inicial: ");
+	 scanf("%f", &saldoInicial);
+	 fflush(stdin);
 
-	Conta nova = criarConta(cliente, senha, saldoInicial);
+	 Conta nova = criarConta(cliente, senha, saldoInicial);
 
-	int numConta;
-	float valor;
-	printf("\nInforme o número da conta de onde deseja sacar: ");
-	scanf("%d", &numConta);
-	fflush(stdin);
+	 int numConta;
+	 float valor;
+	 printf("\nInforme o número da conta de onde deseja sacar: ");
+	 scanf("%d", &numConta);
+	 fflush(stdin);
 
-	puts("\nInforme o valor que deseja sacar: ");
-	scanf("%f", &valor);
-	fflush(stdin);
+	 puts("\nInforme o valor que deseja sacar: ");
+	 scanf("%f", &valor);
+	 fflush(stdin);
 
 
-	if(sacar(numConta, valor))
-		printf("\nSaque da conta %d, no valor de R$ %.2f foi realizado com sucesso!", numConta, valor);
+	 if(sacar(numConta, valor))
+	 printf("\nSaque da conta %d, no valor de R$ %.2f foi realizado com sucesso!", numConta, valor);
 
-    return 0;*/
+	 return 0;*/
 }
 
 bool login() {
 
-    int numConta;
-    char senha[9];
-        system("cls");
-        printf("\nPara realizar o login informe o número da conta e a senha:\n");
-        printf("Número da conta=> ");
-        scanf("%d", &numConta);
-        fflush(stdin);
-        printf("Senha=> ");
-        gets(senha);
-        fflush(stdin);
+	int numConta;
+	char senha[9];
+	system("cls");
+	printf("\nPara realizar o login informe o número da conta e a senha:\n");
+	printf("Número da conta=> ");
+	scanf("%d", &numConta);
+	fflush(stdin);
+	printf("Senha=> ");
+	gets(senha);
+	fflush(stdin);
 
-        return validarlogin(numConta, senha);
+	return validarlogin(numConta, senha);
 }
