@@ -4,7 +4,7 @@
  #define BANKDLL __declspec(dllimport)
 #endif
 
-typedef enum {TRUES=1, FALSES=0} bool;
+typedef enum {FALSES, TRUES} bool;
 
 struct
 {

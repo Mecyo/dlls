@@ -1,11 +1,8 @@
 /*
- ============================================================================
- Name        : Dll.c
- Author      : Emerson
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
- ============================================================================
+ * dll.c
+ *
+ *  Created on: 17 de ago de 2017
+ *      Author: Emerson Santos
  */
 
 #include <stdio.h>

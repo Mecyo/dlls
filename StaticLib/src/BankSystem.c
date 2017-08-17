@@ -9,27 +9,74 @@
  */
 
 #include <stdio.h>
+#include<stdlib.h>
 #include <string.h>
 #include <locale.h>
 #include <dll.h>
+#include <menu.h>
 
-#define KEY_UP 72
-#define KEY_DOWN 80
-#define KEY_ESC 27
-#define KEY_ENTER 13
+#define acima 80
+#define abaixo 72
+#define enter 13
 
 /**
 * Function Prototypes
 */
-void menuPrincipal();
-int func();
 bool login();
 
 int main(int argc,char **argv)
 {
-	setlocale(LC_ALL,"Portuguese");
+	//setlocale(LC_ALL,"Portuguese");
 
-    char cliente[20];
+    int ch,x,y,X,Y;
+	x=5; y=7; X=5; Y=5;
+
+while(1){
+
+menu(X,Y);//variaveis em maiusculas
+gotoxy(x,y); //variaveis em minusculas
+printf(">\n");
+
+while(1){
+		ch=getch();
+		if(ch==224){
+
+				     switch ( getch() ){
+
+						case acima :
+					        	if(y<12){
+													gotoxy(x,y);
+													printf(" ");
+													gotoxy(x,++y);  printf(">");
+										} break;
+
+
+						case abaixo :
+								if(y>7){
+													gotoxy(x,y);
+													printf(" ");
+													gotoxy(x,--y); printf(">");
+										}  break ;
+
+
+					defalte : break;
+
+					}
+
+		}else if(ch==enter){
+								if(escolha(y)==1){ goto fim;} break;
+							}
+
+		}
+	system ("cls");
+	}
+
+	fim:
+		system("PAUSE");
+
+	return EXIT_SUCCESS;
+
+	/*char cliente[20];
     char senha[8];
     float saldoInicial;
     bool validaLogin = login();
@@ -70,25 +117,7 @@ int main(int argc,char **argv)
 	if(sacar(numConta, valor))
 		printf("\nSaque da conta %d, no valor de R$ %.2f foi realizado com sucesso!", numConta, valor);
 
-    return 0;
-}
-
-void menuPrincipal() {
-
-    int key = 0;
-    while(1) {
-        system("cls");
-        printf("\n   ÚÄÄÄÄÄÄÄ Menu Principal ÄÄÄÄÄÄÄ¿\n");
-        printf("   ³                              ³\n");
-        printf("   ³ %s Retornar em main           ³\n", (key == KEY_UP)? "=>": " ");
-        printf("   ³ %s Chamar outra funcao        ³\n", (key == KEY_DOWN)? "=>": " ");
-        printf("   ³                              ³\n");
-        printf("   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ\n");
-        key = getch(); // get key pressed
-
-        if (key == KEY_ESC)
-            return;
-    }
+    return 0;*/
 }
 
 bool login() {
@@ -105,14 +134,4 @@ bool login() {
         fflush(stdin);
 
         return validarlogin(numConta, senha);
-}
-
-int func() {
-    int opcao;
-    printf("\n tecle 1 para imposto");
-    printf("\n tecle 2 para novo salario");
-    printf("\n tecle 3 para classificação");
-    printf("\n tecle 4 para finalizar o programa");
-    scanf("%d",&opcao);
-    return(opcao);
 }
