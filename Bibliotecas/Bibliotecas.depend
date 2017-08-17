@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1501802571 source:c:\users\aluno.ssa-d-cpil04-11\downloads\bibliotecas\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"bankdll.h"
-
-1501712734 c:\users\aluno.ssa-d-cpil04-11\downloads\bibliotecas\bankdll.h
-

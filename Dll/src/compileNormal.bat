@@ -1,7 +1,7 @@
 cls
-C:\MinGW\bin\gcc -c -DBUILD_DLL C:\Users\Aluno\git\dlls\Dll\src\bank.c -o C:\Users\Aluno\git\dlls\Dll\src\out.o
-C:\MinGW\bin\gcc -shared -o C:\Users\Aluno\git\dlls\Dll\src\bank.dll C:\Users\Aluno\git\dlls\Dll\src\out.o -Wl,--out-implib,C:\Users\Aluno\git\dlls\Dll\src\bank.a
-del C:\Users\Aluno\git\dlls\Dll\src\out.o
-C:\MinGW\bin\gcc C:\Users\Aluno\git\dlls\Dll\src\BankDll.c -o C:\Users\Aluno\git\dlls\Dll\src\BankDll.exe C:\Users\Aluno\git\dlls\Dll\src\bank.a
+gcc -c -DBUILD_DLL bank.c -o out.o
+gcc -shared -o bank.dll out.o -Wl,--out-implib,bank.a
+del out.o
+gcc BankDll.c -o BankDll.exe bank.a
 pause
-start C:\Users\Aluno\git\dlls\Dll\src\BankDll.exe
+start BankDll.exe

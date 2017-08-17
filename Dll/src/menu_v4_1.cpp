@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<conio.h>
-#include<conio2.c>//voce vai precisar dessa biblioteca
 #include<windows.h>//essa biblioteca e necessaria pra o uso da funcao tempo
 #include<stdlib.h>
+#include "../lib/conio2.c"//voce vai precisar dessa biblioteca
 
 
 

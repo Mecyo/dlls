@@ -46,7 +46,7 @@ BANKDLL Conta criarConta(char* cliente, char* senha, float saldoInicial) {
 	Conta nova;
 
 	nova.numConta = contarContas() + 1;
-	nova.ativa = TRUE;
+	nova.ativa = TRUES;
 	nova.saldo = saldoInicial;
 	strcpy(nova.cliente, cliente);
 	strcpy(nova.senha, senha);
@@ -66,8 +66,8 @@ BANKDLL Conta criarConta(char* cliente, char* senha, float saldoInicial) {
 	pont_arq_contas = fopen(NOME_ARQ_CONTAS, "a");
 
 	if (pont_arq_contas != NULL) {
-		printf("\n%d;%d;%f;%s;%s", nova.numConta, nova.ativa, nova.saldo, nova.cliente, nova.senha);
-		fprintf(pont_arq_contas, "\n%d;%d;%f;%s;%s", nova.numConta, nova.ativa, nova.saldo, nova.cliente, nova.senha);
+		printf("\n%ld;%d;%f;%s;%s", nova.numConta, nova.ativa, nova.saldo, nova.cliente, nova.senha);
+		fprintf(pont_arq_contas, "\n%ld;%d;%f;%s;%s", nova.numConta, nova.ativa, nova.saldo, nova.cliente, nova.senha);
 	} else {
 		printf("Não foi possível abrir o arquivo!");
 	}
@@ -81,7 +81,7 @@ BANKDLL Conta buscarConta(int numConta) {
 	Conta busca;
 
 	busca.numConta = 12345;
-	busca.ativa = TRUE;
+	busca.ativa = TRUES;
 	strcpy(busca.cliente, "Emerson");
 	busca.saldo = 234.56;
 	strcpy(busca.senha, "1234567");
@@ -113,10 +113,10 @@ BANKDLL bool depositar(int numConta, float valor) {
 
 		}
 
-		depositado = TRUE;
+		depositado = TRUES;
 	} else {
 		printf("Não foi possível abrir o arquivo!");
-		depositado = FALSE;
+		depositado = FALSES;
 	}
 
 	fclose(pont_arq_contas);
@@ -129,7 +129,7 @@ BANKDLL bool sacar(int numConta, float valor) {
 	float saldoAtual = consultarSaldo(numConta);
 	if(saldoAtual < valor) {
 		printf("A conta informada não possui saldo suficiente!");
-		return FALSE;
+		return FALSES;
 	} else {
 		char linha[100];
 		char ch;
@@ -158,7 +158,7 @@ BANKDLL bool sacar(int numConta, float valor) {
 
 		} else {
 			printf("Não foi possível abrir o arquivo!");
-			return FALSE;
+			return FALSES;
 		}
 
 		fclose(pont_arq_contas);
@@ -166,7 +166,7 @@ BANKDLL bool sacar(int numConta, float valor) {
 		unlink(NOME_ARQ_CONTAS);
 		rename("contas.db.bak", NOME_ARQ_CONTAS);
 
-		return TRUE;
+		return TRUES;
 	}
 
 }
@@ -184,9 +184,9 @@ bool verificaNumero(int numConta, char* linha) {
 	}
 
 	if(atoi(num) == numConta)
-		return TRUE;
+		return TRUES;
 
-	return FALSE;
+	return FALSES;
 
 }
 
@@ -279,14 +279,14 @@ BANKDLL bool validarlogin(int numConta, char* senha) {
 	char linha[100];
 	char conta[6];
 	char password[9];
-	bool validaNumero = FALSE, validaSenha = FALSE;
+	bool validaNumero = FALSES, validaSenha = FALSES;
 
 	pont_arq_contas = fopen(NOME_ARQ_NUM_CONTAS, "r");
 
 	if(pont_arq_contas != NULL) {
 		while(fgets(linha, 6, pont_arq_contas) != NULL) {
 			if(numConta == atoi(linha))
-				validaNumero = TRUE;
+				validaNumero = TRUES;
 		}
 	} else {
 		printf("Não foi possível abrir o arquivo!");
@@ -320,7 +320,7 @@ BANKDLL bool validarlogin(int numConta, char* senha) {
 				}
 				int var;
 				if(strcmp (password, senha) == 0)
-					validaSenha = TRUE;
+					validaSenha = TRUES;
 				else {
 					printf("\nSenha inválida para a conta informada!\n\n");
 					system("PAUSE");
