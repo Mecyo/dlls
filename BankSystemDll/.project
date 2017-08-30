@@ -3,6 +3,8 @@
 	<name>BankSystemDll</name>
 	<comment></comment>
 	<projects>
+		<project>bank</project>
+		<project>menu</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
