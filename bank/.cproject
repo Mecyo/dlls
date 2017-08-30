@@ -5,9 +5,9 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.lib.debug.1879109668" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<externalSettings>
 					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/BankDllLib"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/BankDllLib/Debug"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="BankDllLib" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/bank"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/bank/Debug"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="bank" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -21,7 +21,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.mingw.lib.debug.1879109668." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.lib.debug.788806533" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.lib.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.lib.debug.598385132" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.lib.debug"/>
-							<builder buildPath="${workspace_loc:/BankDllLib}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.96060704" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<builder buildPath="${workspace_loc:/bank}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.96060704" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.lib.debug.1898692668" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.lib.debug">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1804316900" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -47,9 +47,9 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.lib.release.723121672" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings>
 					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/BankDllLib"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/BankDllLib/Release"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="BankDllLib" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/bank"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/bank/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="bank" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -63,7 +63,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.mingw.lib.release.723121672." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.lib.release.880369931" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.lib.release">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.lib.release.453547910" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.lib.release"/>
-							<builder buildPath="${workspace_loc:/BankDllLib}/Release" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1121218034" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<builder buildPath="${workspace_loc:/bank}/Release" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1121218034" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.lib.release.1638115680" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.lib.release">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1004563880" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -87,7 +87,7 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="BankDllLib.cdt.managedbuild.target.gnu.mingw.lib.1374916583" name="Static Library" projectType="cdt.managedbuild.target.gnu.mingw.lib"/>
+		<project id="bank.cdt.managedbuild.target.gnu.mingw.lib.1374916583" name="Static Library" projectType="cdt.managedbuild.target.gnu.mingw.lib"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>

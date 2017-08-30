@@ -5,9 +5,9 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.lib.debug.188402066" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<externalSettings>
 					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/MenuLibStatic"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/MenuLibStatic/Debug"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="MenuLibStatic" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/menu"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/menu/Debug"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="menu" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -21,7 +21,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.mingw.lib.debug.188402066." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.lib.debug.1001882160" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.lib.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.lib.debug.1593268652" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.lib.debug"/>
-							<builder buildPath="${workspace_loc:/MenuLibStatic}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.300218161" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<builder buildPath="${workspace_loc:/menu}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.300218161" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.lib.debug.2105609165" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.lib.debug">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1867840051" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -47,9 +47,9 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.lib.release.1348873301" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings>
 					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/MenuLibStatic"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/MenuLibStatic/Release"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="MenuLibStatic" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/menu"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/menu/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="menu" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -63,7 +63,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.mingw.lib.release.1348873301." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.lib.release.689076615" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.lib.release">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.lib.release.495613144" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.lib.release"/>
-							<builder buildPath="${workspace_loc:/MenuLibStatic}/Release" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1990183853" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<builder buildPath="${workspace_loc:/menu}/Release" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1990183853" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.lib.release.1925188115" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.lib.release">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1387192253" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -87,7 +87,7 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="MenuLibStatic.cdt.managedbuild.target.gnu.mingw.lib.1154354273" name="Static Library" projectType="cdt.managedbuild.target.gnu.mingw.lib"/>
+		<project id="menu.cdt.managedbuild.target.gnu.mingw.lib.1154354273" name="Static Library" projectType="cdt.managedbuild.target.gnu.mingw.lib"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
