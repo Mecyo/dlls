@@ -33,13 +33,13 @@ int main(int argc, char **argv) {
 	X = 5;
 	Y = 5;
 
-	while(!login()) {
+	while(1) {
 
-		while (1) {
+		while (!login()) {
 
 			menu(X, Y); //variaveis em maiusculas
 			gotoxy(x, y); //variaveis em minusculas
-			printf(">\n");
+			printf(">");
 
 			while (1) {
 				ch = getch();
@@ -48,10 +48,16 @@ int main(int argc, char **argv) {
 					switch (getch()) {
 
 					case acima:
-						if (y < 12) {
+						if (y < 11) {
 							gotoxy(x, y);
 							printf(" ");
 							gotoxy(x, ++y);
+							printf(">");
+						} else {
+							gotoxy(x, y);
+							printf(" ");
+							y = 8;
+							gotoxy(x, --y);
 							printf(">");
 						}
 						break;
@@ -62,10 +68,16 @@ int main(int argc, char **argv) {
 							printf(" ");
 							gotoxy(x, --y);
 							printf(">");
+						} else {
+							gotoxy(x, y);
+							printf(" ");
+							y = 10;
+							gotoxy(x, ++y);
+							printf(">");
 						}
 						break;
 
-						defalte: break;
+						default: break;
 
 					}
 
@@ -114,7 +126,7 @@ int main(int argc, char **argv) {
 
 	 int numConta;
 	 float valor;
-	 printf("\nInforme o número da conta de onde deseja sacar: ");
+	 printf("\nInforme o nï¿½mero da conta de onde deseja sacar: ");
 	 scanf("%d", &numConta);
 	 fflush(stdin);
 
@@ -134,8 +146,8 @@ bool login() {
 	int numConta;
 	char senha[9];
 	system("cls");
-	printf("\nPara realizar o login informe o número da conta e a senha:\n");
-	printf("Número da conta=> ");
+	printf("\nPara realizar o login informe o nï¿½mero da conta e a senha:\n");
+	printf("Nï¿½mero da conta=> ");
 	scanf("%d", &numConta);
 	fflush(stdin);
 	printf("Senha=> ");

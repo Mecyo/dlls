@@ -14,8 +14,8 @@
 bool verificaNumero(int numConta, char* linha);
 char* alterarLinha(char* linha, int posicao, char* replacement);
 
-static char NOME_ARQ_CONTAS[] = "contas.db";
-static char NOME_ARQ_NUM_CONTAS[] = "num_contas.db";
+static char NOME_ARQ_CONTAS[] = "E:/OxygenWork/contas.db";
+static char NOME_ARQ_NUM_CONTAS[] = "E:/OxygenWork/num_contas.db";
 FILE *pont_arq_contas;
 
 int contarContas() {
@@ -31,7 +31,7 @@ int contarContas() {
         }
     }
     else {
-        printf("Não foi possível abrir o arquivo!");
+        printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
     }
 
     fclose(pont_arq_contas);
@@ -55,7 +55,7 @@ Conta criarConta(char* cliente, char* senha, float saldoInicial) {
 		sprintf(str, "\n%d", nova.numConta);
 		fputs(str, pont_arq_contas);
 	} else {
-		printf("Não foi possível abrir o arquivo!");
+		printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
 	}
 
 	fclose(pont_arq_contas);
@@ -66,7 +66,7 @@ Conta criarConta(char* cliente, char* senha, float saldoInicial) {
 		printf("\n%d;%d;%f;%s;%s", nova.numConta, nova.ativa, nova.saldo, nova.cliente, nova.senha);
 		fprintf(pont_arq_contas, "\n%d;%d;%f;%s;%s", nova.numConta, nova.ativa, nova.saldo, nova.cliente, nova.senha);
 	} else {
-		printf("Não foi possível abrir o arquivo!");
+		printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
 	}
 
 	fclose(pont_arq_contas);
@@ -112,7 +112,7 @@ bool depositar(int numConta, float valor) {
 
 		depositado = TRUE;
 	} else {
-		printf("Não foi possível abrir o arquivo!");
+		printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
 		depositado = FALSE;
 	}
 
@@ -125,7 +125,7 @@ bool sacar(int numConta, float valor) {
 
 	float saldoAtual = consultarSaldo(numConta);
 	if(saldoAtual < valor) {
-		printf("A conta informada não possui saldo suficiente!");
+		printf("A conta informada nï¿½o possui saldo suficiente!");
 		return FALSE;
 	} else {
 		char linha[100];
@@ -151,7 +151,7 @@ bool sacar(int numConta, float valor) {
 			}
 
 		} else {
-			printf("Não foi possível abrir o arquivo!");
+			printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
 			return FALSE;
 		}
 
@@ -221,7 +221,7 @@ float consultarSaldo(int numConta) {
 			}
 
 		} else {
-			printf("Não foi possível abrir o arquivo!");
+			printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
 		}
 
 	return 0.0;
@@ -275,13 +275,14 @@ bool validarlogin(int numConta, char* senha) {
 
 	pont_arq_contas = fopen(NOME_ARQ_NUM_CONTAS, "r");
 
+	numConta = 1;
 	if(pont_arq_contas != NULL) {
 		while(fgets(linha, 6, pont_arq_contas) != NULL) {
 			if(numConta == atoi(linha))
 				validaNumero = TRUE;
 		}
 	} else {
-		printf("Não foi possível abrir o arquivo!");
+		printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
 		system("PAUSE");
 	}
 
@@ -305,24 +306,26 @@ bool validarlogin(int numConta, char* senha) {
 						while(i < strlen(linha))
 							if(linha[i] != '\n')
 								password[j++] = linha[i++];
-							else
+							else {
+								password[j++] = '\0';
 								i++;
+							}
 
 					}
 				}
 				if(strcmp (password, senha) == 0)
 					validaSenha = TRUE;
 				else {
-					printf("\nSenha inválida para a conta informada!\n\n");
+					printf("\nSenha invï¿½lida para a conta informada!\n\n");
 					system("PAUSE");
 				}
 
 			} else {
-				printf("Não foi possível abrir o arquivo!");
+				printf("Nï¿½o foi possï¿½vel abrir o arquivo!");
 				system("PAUSE");
 			}
 	} else {
-		printf("\nO número da conta informado é inválido!\n\n");
+		printf("\nO nï¿½mero da conta informado ï¿½ invï¿½lido!\n\n");
 		system("PAUSE");
 	}
 

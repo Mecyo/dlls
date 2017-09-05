@@ -65,14 +65,14 @@ void tempo6(){
 	if(i%2){strcat(charging,"Û"); }//variavel olavo recebe caractere Û.
     system("CLS");//limpa a tela
 
-    printf("               ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿");
-    printf("\n  Load Programa³");
+    printf("                       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿");
+    printf("\n  Carregando o Programa³");
 
 	textcolor(YELLOW);
 	printf("  %s ",charging);//exibe na tela a contagem de "i" e acumula os caracteres "Û" na tela
 
 	textcolor(WHITE);
-	printf("\n               ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ");
+	printf("\n                       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ");
     gotoxy(64,1);
 	printf("    ³ %d%% ",i);
 	Sleep(25); //tempo de 25 milisegundo
@@ -83,8 +83,9 @@ void tempo6(){
     Sleep(1000);//espera de um segundo
 }
 
-
-
+void charging(int X, int Y) {
+	textbackground(BLUE); textcolor(YELLOW);tempo6();system ("cls");
+}
 
 void menu(int X,int Y){
 	    textbackground(GREEN);
@@ -108,34 +109,31 @@ int escolha(int y){
 	int X=5,Y=5;
 	switch(y){
 
-		case 7: textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
+		case 7: charging(X, Y);
+				textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
 				textbackground(GREEN); printxy(X, Y++," \t\t NOVA CONTA \t\t");
 		        textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t\n"); break;
 
-		case 8: textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
+		case 8: charging(X, Y);
+				textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
 				textbackground(GREEN); printxy(X, Y++," \t\tDEPOSITAR \t\t");
 		        textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t\n"); break;
 
-		case 9: textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
+		case 9: charging(X, Y);
+				textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
 				textbackground(GREEN); printxy(X, Y++," \t\tSACAR \t\t");
 		        textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t\n"); break;
 
-		case 10: textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
+		case 10: charging(X, Y);
+				 textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
 				 textbackground(GREEN); printxy(X, Y++," \t\tCONSULTAR SALDO\t\t");
 		         textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t\n");break;
 
-		case 11: textbackground(BLUE); textcolor(YELLOW);tempo6();system ("cls");
-				 textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t");
-				 textbackground(GREEN); printxy(X, Y++," \t\t ALUNO OLAVO!!\t\t");
-		         textbackground(GREEN); printxy(X, Y++," \t\t \t\t\t\n"); break;
-
-		case 12:
-				 textbackground(RED); printxy(X, Y++," \t\t                \t\t");
-				 textbackground(RED); textcolor(WHITE);printxy(X, Y++," \t\tFIM DO PROGRAMA.\t\t");
+		case 11: textbackground(RED); printxy(X, Y++," \t\t                \t\t");
+				 textbackground(RED); textcolor(WHITE);printxy(X, Y++," \t\t PROGRAMA FINALIZADO COM SUCESSO!!\t\t");
 		         textbackground(RED); printxy(X, Y++," \t\t                \t\t\n");
 				 textbackground(BLUE); return 1;  break;
 	}
-    textbackground(BLUE);
 	system("pause");
 	return 0;
 }
