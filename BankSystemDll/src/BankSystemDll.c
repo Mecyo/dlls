@@ -33,64 +33,67 @@ int main(int argc, char **argv) {
 	X = 5;
 	Y = 5;
 
+	bool login = FALSE;
+
 	while(1) {
 
-		while (!login()) {
+		while (!login) {
+			login = login();
+		}
 
-			menu(X, Y); //variaveis em maiusculas
-			gotoxy(x, y); //variaveis em minusculas
-			printf(">");
+		menu(X, Y); //variaveis em maiusculas
+		gotoxy(x, y); //variaveis em minusculas
+		printf(">");
 
-			while (1) {
-				ch = getch();
-				if (ch == 224) {
+		while (1) {
+			ch = getch();
+			if (ch == 224) {
 
-					switch (getch()) {
+				switch (getch()) {
 
-					case acima:
-						if (y < 11) {
-							gotoxy(x, y);
-							printf(" ");
-							gotoxy(x, ++y);
-							printf(">");
-						} else {
-							gotoxy(x, y);
-							printf(" ");
-							y = 8;
-							gotoxy(x, --y);
-							printf(">");
-						}
-						break;
-
-					case abaixo:
-						if (y > 7) {
-							gotoxy(x, y);
-							printf(" ");
-							gotoxy(x, --y);
-							printf(">");
-						} else {
-							gotoxy(x, y);
-							printf(" ");
-							y = 10;
-							gotoxy(x, ++y);
-							printf(">");
-						}
-						break;
-
-						default: break;
-
-					}
-
-				} else if (ch == enter) {
-					if (escolha(y) == 1) {
-						goto fim;
+				case acima:
+					if (y < 11) {
+						gotoxy(x, y);
+						printf(" ");
+						gotoxy(x, ++y);
+						printf(">");
+					} else {
+						gotoxy(x, y);
+						printf(" ");
+						y = 8;
+						gotoxy(x, --y);
+						printf(">");
 					}
 					break;
+
+				case abaixo:
+					if (y > 7) {
+						gotoxy(x, y);
+						printf(" ");
+						gotoxy(x, --y);
+						printf(">");
+					} else {
+						gotoxy(x, y);
+						printf(" ");
+						y = 10;
+						gotoxy(x, ++y);
+						printf(">");
+					}
+					break;
+
+					default: break;
+
 				}
 
+			} else if (ch == enter) {
+				if (escolha(y) == 1) {
+					goto fim;
+				}
+				break;
 			}
-			system("cls");
+
 		}
+		system("cls");
 	}
 
 	fim: system("PAUSE");
@@ -146,8 +149,8 @@ bool login() {
 	int numConta;
 	char senha[9];
 	system("cls");
-	printf("\nPara realizar o login informe o n�mero da conta e a senha:\n");
-	printf("N�mero da conta=> ");
+	printf("\nPara realizar o login informe o numero da conta e a senha:\n");
+	printf("Numero da conta=> ");
 	scanf("%d", &numConta);
 	fflush(stdin);
 	printf("Senha=> ");

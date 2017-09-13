@@ -14,8 +14,8 @@
 bool verificaNumero(int numConta, char* linha);
 char* alterarLinha(char* linha, int posicao, char* replacement);
 
-static char NOME_ARQ_CONTAS[] = "E:/OxygenWork/contas.db";
-static char NOME_ARQ_NUM_CONTAS[] = "E:/OxygenWork/num_contas.db";
+static char NOME_ARQ_CONTAS[] = "contas.db";
+static char NOME_ARQ_NUM_CONTAS[] = "num_contas.db";
 FILE *pont_arq_contas;
 
 int contarContas() {
@@ -282,7 +282,7 @@ bool validarlogin(int numConta, char* senha) {
 				validaNumero = TRUE;
 		}
 	} else {
-		printf("N�o foi poss�vel abrir o arquivo!");
+		printf("Nao foi possivel abrir o arquivo!\n");
 		system("PAUSE");
 	}
 
@@ -303,29 +303,30 @@ bool validarlogin(int numConta, char* senha) {
 						}
 
 						int j = 0;
-						while(i < strlen(linha))
+						while(i < strlen(linha)) {
 							if(linha[i] != '\n')
 								password[j++] = linha[i++];
 							else {
 								password[j++] = '\0';
 								i++;
 							}
-
+						}
 					}
 				}
+
 				if(strcmp (password, senha) == 0)
 					validaSenha = TRUE;
 				else {
-					printf("\nSenha inv�lida para a conta informada!\n\n");
+					printf("\nSenha invalida para a conta informada!\n\n");
 					system("PAUSE");
 				}
 
 			} else {
-				printf("N�o foi poss�vel abrir o arquivo!");
+				printf("Nao foi possivel abrir o arquivo!");
 				system("PAUSE");
 			}
 	} else {
-		printf("\nO n�mero da conta informado � inv�lido!\n\n");
+		printf("\nO numero da conta informado eh invalido!\n\n");
 		system("PAUSE");
 	}
 
