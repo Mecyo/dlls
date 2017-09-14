@@ -32,14 +32,11 @@ int main(int argc, char **argv) {
 	y = 7;
 	X = 5;
 	Y = 5;
-
-	bool login = FALSE;
+	system("PAUSE");
 
 	while(1) {
 
-		while (!login) {
-			login = login();
-		}
+		while (!login()) {}
 
 		menu(X, Y); //variaveis em maiusculas
 		gotoxy(x, y); //variaveis em minusculas
